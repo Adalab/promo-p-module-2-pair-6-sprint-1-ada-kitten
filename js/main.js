@@ -2,7 +2,7 @@
 
 const newForm = document.querySelector('.new-form');
 
-newForm.classList.remove("collapsed");
+/* newForm.classList.remove("collapsed"); */
 
 
 const data=document.querySelector (".data");
@@ -28,7 +28,7 @@ const kittenRace1="British Shorthair";
 const kittenRace2="British Shorthair";
 const kittenRace3="British Shorthair";
 
-const list=`<li class="card">
+const kitten1= `<li class="card">
 <article>
   <img
     class="card_img"
@@ -41,9 +41,8 @@ const list=`<li class="card">
   ${kittenDesc1}
   </p>
 </article>
-</li>
-
-<li class="card">
+</li>`;
+const kitten2= `<li class="card">
 <img
   class="card_img"
   src=${kittenImage2}
@@ -54,8 +53,8 @@ const list=`<li class="card">
 <p class="card_description">
 ${kittenDesc2}
 </p>
-</li>
-<li class="card">
+</li>`;
+const kitten3= `<li class="card">
 <img
   class="card_img"
   src=${kittenImage3}
@@ -66,5 +65,10 @@ ${kittenDesc2}
 <p class="card_description">
 ${kittenDesc3}
 </p>
-</li>`
-jsList.innerHTML = list;
+</li>`;
+
+jsList.innerHTML = kitten1 + kitten2 + kitten3;
+
+ 
+
+
