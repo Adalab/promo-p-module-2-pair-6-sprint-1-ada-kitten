@@ -2,7 +2,7 @@
 
 const newForm = document.querySelector('.new-form');
 
-/* newForm.classList.remove("collapsed"); */
+newForm.classList.remove("collapsed");
 
 
 const data=document.querySelector (".data");
@@ -28,7 +28,7 @@ const kittenRace1="British Shorthair";
 const kittenRace2="British Shorthair";
 const kittenRace3="British Shorthair";
 
-const kitten1= `<li class="card">
+const kitten1= `<li class="card1 card">
 <article>
   <img
     class="card_img"
@@ -42,7 +42,7 @@ const kitten1= `<li class="card">
   </p>
 </article>
 </li>`;
-const kitten2= `<li class="card">
+const kitten2= `<li class="card2 card">
 <img
   class="card_img"
   src=${kittenImage2}
@@ -54,7 +54,7 @@ const kitten2= `<li class="card">
 ${kittenDesc2}
 </p>
 </li>`;
-const kitten3= `<li class="card">
+const kitten3= `<li class="card3 card">
 <img
   class="card_img"
   src=${kittenImage3}
@@ -69,6 +69,40 @@ ${kittenDesc3}
 
 jsList.innerHTML = kitten1 + kitten2 + kitten3;
 
- 
+const input = document.querySelector(".input");
+input.classList.add("js_in_search_desc");
 
 
+
+const input_search_desc = document.querySelector('.js_in_search_desc');
+input_search_desc.value = 'guta';
+const descrSearchText = input_search_desc.value;
+
+
+const kitten1li = document.querySelector(".card1");
+const kitten2li = document.querySelector(".card2");
+const kitten3li = document.querySelector(".card3");
+
+//kitten1
+if( kittenDesc1.includes(descrSearchText) ) {
+  console.log("aparece mi descripción");
+}
+else { 
+  kitten1li.classList.add("collapsed");
+}
+
+//kitten2
+if( kittenDesc2.includes(descrSearchText) ) {
+  console.log("aparece mi descripción");
+}
+else { 
+  kitten2li.classList.add("collapsed");
+}
+
+//kitten3
+if( kittenDesc3.includes(descrSearchText) ) {
+  console.log("aparece mi descripción");
+}
+else { 
+  kitten3li.classList.add("collapsed");
+}
