@@ -119,11 +119,11 @@ item.addEventListener('click',()=>{
 
 //campos obligatorios
 const btn =document.querySelector('.js-btn-add');
-item.addEventListener('click',(event)=>{
+btn.addEventListener('click',(event)=>{
   event.preventDefault();
   console.log("he pulsado añadir");
   
-  /*const inputDesc = document.querySelector(".js-input-desc");
+  const inputDesc = document.querySelector(".js-input-desc");
   const inputPhoto = document.querySelector(".js-input-photo");
   const inputName = document.querySelector(".js-input-name");
   const labelMesageError = document.querySelector(".js-label-error");
@@ -138,6 +138,6 @@ item.addEventListener('click',(event)=>{
   } else {
     console.log("ya lo hemos rellenado");
     //completa el código
-  }*/
+  }
 
 });
