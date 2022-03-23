@@ -1,6 +1,6 @@
 "use strict";
 
-const newForm = document.querySelector('.new-form');
+const newForm = document.querySelector('.js-new-form');
 
 newForm.classList.remove("collapsed");
 
@@ -69,8 +69,8 @@ ${kittenDesc3}
 
 jsList.innerHTML = kitten1 + kitten2 + kitten3;
 
-const input = document.querySelector(".input");
-input.classList.add("js_in_search_desc");
+/*const input = document.querySelector(".input");
+input.classList.add("js_in_search_desc");*/
 
 
 
@@ -106,3 +106,38 @@ if( kittenDesc3.includes(descrSearchText) ) {
 else { 
   kitten3li.classList.add("collapsed");
 }
+
+
+
+//colapsed formulario
+
+const item = document.querySelector('.item');
+item.addEventListener('click',()=>{
+  newForm.classList.toggle("collapsed");
+});
+
+
+//campos obligatorios
+const btn =document.querySelector('.js-btn-add');
+item.addEventListener('click',(event)=>{
+  event.preventDefault();
+  console.log("he pulsado añadir");
+  
+  /*const inputDesc = document.querySelector(".js-input-desc");
+  const inputPhoto = document.querySelector(".js-input-photo");
+  const inputName = document.querySelector(".js-input-name");
+  const labelMesageError = document.querySelector(".js-label-error");
+
+
+  const valueDesc = inputDesc.value;
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
+
+  if (valueDesc === "" && valuePhoto === "" && valueName === "") {
+    console.log("da error");
+  } else {
+    console.log("ya lo hemos rellenado");
+    //completa el código
+  }*/
+
+});
