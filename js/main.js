@@ -109,35 +109,84 @@ else {
 
 
 
-//colapsed formulario
+//------------------colapsed formulario antiguo
 
-const item = document.querySelector('.item');
+/* const item = document.querySelector('.item');
 item.addEventListener('click',()=>{
   newForm.classList.toggle("collapsed");
 });
+ */
 
-
-//campos obligatorios
+//-------------------campos obligatorios
 const btn =document.querySelector('.js-btn-add');
+const message = document.querySelector('.js-message');
+const labelMesageError = document.querySelector(".js-label-error");
+
+
+
 btn.addEventListener('click',(event)=>{
   event.preventDefault();
-  console.log("he pulsado añadir");
+  /* console.log("he pulsado añadir"); */
   
   const inputDesc = document.querySelector(".js-input-desc");
   const inputPhoto = document.querySelector(".js-input-photo");
   const inputName = document.querySelector(".js-input-name");
-  const labelMesageError = document.querySelector(".js-label-error");
-
-
+  
   const valueDesc = inputDesc.value;
   const valuePhoto = inputPhoto.value;
   const valueName = inputName.value;
 
-  if (valueDesc === "" && valuePhoto === "" && valueName === "") {
+  if (valueDesc === "" || valuePhoto === "" || valueName === "") {
     console.log("da error");
+    message.innerHTML = `<p>Debe rellenar todos los valores!</p>`;
+
   } else {
     console.log("ya lo hemos rellenado");
     //completa el código
   }
-
 });
+
+
+
+
+//-------------------cancelar y ocultar formulario
+const btnCancel = document.querySelector(".js-btn-cancel");
+
+btnCancel.addEventListener('click',(event)=>{
+console.log("Pulso cancel");
+newForm.classList.add("collapsed");
+
+if (valueDesc !== "" || valuePhoto !== "" || valueName !== "") {
+  (inputDesc.value && inputPhoto.value && inputName.value) === "";
+} 
+});
+
+//---------------función mostrar y ocultar formulario
+const newFormElement = document.querySelector(".js-new-form");
+const item = document.querySelector('.item');
+
+function hideNewCatForm() {
+  newFormElement.classList.toggle('collapsed');
+} 
+
+item.addEventListener("click" ,hideNewCatForm);
+
+//---------------------crear el gatito
+
+function renderKitten(url, desc, name, race) {
+  jsList.innerHTML = `<li class="card1 card">
+<article>
+  <img
+    class="card_img"
+    src= ${url}
+    alt="gatito"
+  />
+  <h3 class="card_title">${name}</h3>
+  <h4 class="card_race">${race}</h4>
+  <p class="card_description">
+  ${desc}
+  </p>
+</article>
+</li>`;
+};
+
