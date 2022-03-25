@@ -174,7 +174,8 @@ item.addEventListener("click" ,hideNewCatForm);
 //---------------------crear el gatito
 
 function renderKitten(url, desc, name, race) {
-  jsList.innerHTML = `<li class="card1 card">
+  console.log(yeah);
+  const liValue = `<li class="card1 card">
 <article>
   <img
     class="card_img"
@@ -188,5 +189,10 @@ function renderKitten(url, desc, name, race) {
   </p>
 </article>
 </li>`;
+/* order.innerHTML += liValue; */
+return jsList.innerHTML += liValue;
+
+
 };
 
+renderKitten( kittenImage1, kittenDesc1, kittenName1, kittenRace1);
