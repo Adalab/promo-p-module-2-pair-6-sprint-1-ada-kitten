@@ -173,26 +173,60 @@ item.addEventListener("click" ,hideNewCatForm);
 
 //---------------------crear el gatito
 
-function renderKitten(url, desc, name, race) {
-  console.log(yeah);
+function renderKitten(dataDeCualquierKitten) {
+//  dataDeCualquierKitten.image();
+  console.log();
+  
   const liValue = `<li class="card1 card">
 <article>
   <img
     class="card_img"
-    src= ${url}
+    src= ${dataDeCualquierKitten.image}
     alt="gatito"
   />
-  <h3 class="card_title">${name}</h3>
-  <h4 class="card_race">${race}</h4>
+  <h3 class="card_title">${dataDeCualquierKitten.name}</h3>
+  <h4 class="card_race">${dataDeCualquierKitten.race}</h4>
   <p class="card_description">
-  ${desc}
+  ${dataDeCualquierKitten.desc}
   </p>
 </article>
 </li>`;
 /* order.innerHTML += liValue; */
-return jsList.innerHTML += liValue;
+jsList.innerHTML += liValue;
 
 
 };
 
-renderKitten( kittenImage1, kittenDesc1, kittenName1, kittenRace1);
+//renderKitten( kittenImage1, kittenDesc1, kittenName1, kittenRace1);
+
+//-----------------------------objetos de los gatitos
+
+const kittenData_1 = {
+  image:kittenImage1,
+  name:kittenName1,
+  desc:kittenDesc1,
+  race:kittenRace1,
+};
+renderKitten( kittenData_1);
+
+const kittenData_2 = {
+  image:kittenImage2,
+  name:kittenName2,
+  desc:kittenDesc2,
+  race:kittenRace2,
+};
+renderKitten( kittenData_2 );
+
+
+const kittenData_3 = {
+  image:kittenImage3,
+  name:kittenName3,
+  desc:kittenDesc3,
+  race:kittenRace3,
+};
+renderKitten( kittenData_3 );
+
+
+
+
+//renderKitten(  {image:"sdlkfjs", prado:"sadlkfjs", lucia:"sdklfj", race:"sdf"}  )
