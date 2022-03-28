@@ -28,7 +28,7 @@ const kittenRace1="British Shorthair";
 const kittenRace2="British Shorthair";
 const kittenRace3="British Shorthair";
 
-const kitten1= `<li class="card1 card">
+/*const kitten1= `<li class="card1 card">
 <article>
   <img
     class="card_img"
@@ -67,7 +67,7 @@ ${kittenDesc3}
 </p>
 </li>`;
 
-jsList.innerHTML = kitten1 + kitten2 + kitten3;
+jsList.innerHTML = kitten1 + kitten2 + kitten3;*/
 
 /*const input = document.querySelector(".input");
 input.classList.add("js_in_search_desc");*/
@@ -201,7 +201,7 @@ jsList.innerHTML += liValue;
 
 //-----------------------------objetos de los gatitos
 
-const kittenData_1 = {
+/*const kittenData_1 = {
   image:kittenImage1,
   name:kittenName1,
   desc:kittenDesc1,
@@ -224,9 +224,53 @@ const kittenData_3 = {
   desc:kittenDesc3,
   race:kittenRace3,
 };
-renderKitten( kittenData_3 );
+renderKitten( kittenData_3 );*/
 
 
 
 
 //renderKitten(  {image:"sdlkfjs", prado:"sadlkfjs", lucia:"sdklfj", race:"sdf"}  )
+
+//----------------Arrays
+const kittenDataList=[
+  {
+    image:kittenImage1,
+    name:kittenName1,
+    desc:kittenDesc1,
+    race:kittenRace1,
+  },
+  {
+    image:kittenImage2,
+    name:kittenName2,
+    desc:kittenDesc2,
+    race:kittenRace2,
+  },
+  {
+    image:kittenImage3,
+    name:kittenName3,
+    desc:kittenDesc3,
+    race:kittenRace3,
+  },
+];
+
+  for (let renderKittenList of kittenDataList) {
+    jsList.innerHTML += `<li class="card1 card">
+    <article>
+      <img
+        class="card_img"
+        src= ${renderKittenList.image}
+        alt="gatito"
+      />
+      <h3 class="card_title">${renderKittenList.name}</h3>
+      <h4 class="card_race">${renderKittenList.race}</h4>
+      <p class="card_description">
+      ${renderKittenList.desc}
+      </p>
+    </article>
+    </li>`;
+};
+  //Completa el código:
+  //Vaciamos el innerHTML del <ul> de la página.
+  //Iteramos sobre el listado de gatitos
+  //Y por cada iteración pintamos un gatito.
+  //utilizando la función renderKitten(kittenItem)
