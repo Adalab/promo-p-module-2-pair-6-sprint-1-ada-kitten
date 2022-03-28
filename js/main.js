@@ -84,7 +84,7 @@ const kitten2li = document.querySelector(".card2");
 const kitten3li = document.querySelector(".card3");
 
 //kitten1
-if( kittenDesc1.includes(descrSearchText) ) {
+/*if( kittenDesc1.includes(descrSearchText) ) {
   console.log("aparece mi descripción");
 }
 else { 
@@ -105,7 +105,7 @@ if( kittenDesc3.includes(descrSearchText) ) {
 }
 else { 
   kitten3li.classList.add("collapsed");
-}
+}*/
 
 
 
@@ -232,6 +232,13 @@ renderKitten( kittenData_3 );*/
 //renderKitten(  {image:"sdlkfjs", prado:"sadlkfjs", lucia:"sdklfj", race:"sdf"}  )
 
 //----------------Arrays
+
+ //Completa el código:
+  //Vaciamos el innerHTML del <ul> de la página.
+  //Iteramos sobre el listado de gatitos
+  //Y por cada iteración pintamos un gatito.
+  //utilizando la función renderKitten(kittenItem)
+
 const kittenDataList=[
   {
     image:kittenImage1,
@@ -253,7 +260,7 @@ const kittenDataList=[
   },
 ];
 
-  for (let renderKittenList of kittenDataList) {
+ /* for (let renderKittenList of kittenDataList) {
     jsList.innerHTML += `<li class="card1 card">
     <article>
       <img
@@ -268,9 +275,42 @@ const kittenDataList=[
       </p>
     </article>
     </li>`;
-};
-  //Completa el código:
-  //Vaciamos el innerHTML del <ul> de la página.
-  //Iteramos sobre el listado de gatitos
-  //Y por cada iteración pintamos un gatito.
-  //utilizando la función renderKitten(kittenItem)
+};*/
+ //-------------------Arrays parte dos :filtrar por descripcion
+
+
+ function filterKitten(event) {
+  event.preventDefault();
+
+  const descrSearchText = input_search_desc.value;
+
+  jsList.innerHTML = '';
+  for (const renderKittenList of kittenDataList) {
+
+    if( renderKittenList.desc.includes(descrSearchText) ) {
+      const patata= 
+      jsList.innerHTML += `<li class="card1 card">
+    <article>
+      <img
+        class="card_img"
+        src= ${renderKittenList.image}
+        alt="gatito"
+      />
+      <h3 class="card_title">${renderKittenList.name}</h3>
+      <h4 class="card_race">${renderKittenList.race}</h4>
+      <p class="card_description">
+      ${renderKittenList.desc}
+      </p>
+    </article>
+    </li>`
+    };
+    
+
+
+    //Completa el código
+    //Comprueba si cada gatito contiene la descripción
+    //Si la contiene pintamos un gatito
+    //utilizando la función renderKitten(kittenItem)
+  }
+}
+filterKitten(event);
