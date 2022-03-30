@@ -260,7 +260,7 @@ const kittenDataList=[
   },
 ];
 
- /* for (let renderKittenList of kittenDataList) {
+  for (let renderKittenList of kittenDataList) {
     jsList.innerHTML += `<li class="card1 card">
     <article>
       <img
@@ -275,7 +275,7 @@ const kittenDataList=[
       </p>
     </article>
     </li>`;
-};*/
+};
  //-------------------Arrays parte dos :filtrar por descripcion
 
 
